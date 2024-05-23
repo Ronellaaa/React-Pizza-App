@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Ronellaaa.github.io/React-Pizza-App",
+  "homepage": "https://ronellaaa.github.io/React-Pizza-App",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

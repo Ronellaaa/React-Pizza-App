@@ -17,31 +17,35 @@ import {
 
 function App() {
   return (
-    <>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Navigate replace to="/slideshow" />} />
-
-          <Route path="/slideshow" element={<SlideShow />} />
-          <Route path="/" element={<Layout />}></Route>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate replace to="/slideshow" />} />
+        <Route path="/" element={<Layout />}>
+          <Route path="/slideshow" element={<SlideShowLayout />} />
           <Route path="/home" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-        </Routes>
-
-        <Footer />
-      </Router>
-    </>
+        </Route>
+      </Routes>
+    </Router>
   );
 }
+
 function Layout() {
   return (
     <>
       <Navbar />
       <Outlet />
       <Footer />
+    </>
+  );
+}
+
+function SlideShowLayout() {
+  return (
+    <>
+      <SlideShow />
     </>
   );
 }

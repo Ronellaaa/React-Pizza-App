@@ -17,33 +17,39 @@ import {
 
 function App() {
   return (
-    <>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route
-            path="/React-Pizza-App"
-            element={<Navigate replace to="/slideshow" />}
-          />
-
-          <Route path="/slideshow" element={<SlideShow />} />
-          <Route path="/" element={<Layout />}></Route>
+    <Router>
+      <Routes>
+        <Route
+          path="/React-Pizza-App"
+          element={<Navigate replace to="/slideshow" />}
+        />
+        <Route path="/slideshow" element={<SlideshowLayout />} />
+        <Route path="/" element={<Layout />}>
           <Route path="/home" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-        </Routes>
-
-        <Footer />
-      </Router>
-    </>
+        </Route>
+      </Routes>
+    </Router>
   );
 }
+
 function Layout() {
   return (
     <>
       <Navbar />
       <Outlet />
+      <Footer />
+    </>
+  );
+}
+
+function SlideshowLayout() {
+  return (
+    <>
+      <Navbar />
+      <SlideShow />
       <Footer />
     </>
   );
